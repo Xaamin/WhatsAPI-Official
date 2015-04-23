@@ -56,6 +56,9 @@ echo "[] Logging in as '$nickname' ($username)\n";
 $w = new WhatsProt($username, $nickname, $debug);
 $w->connect();
 
+// Now loginWithPassword function sends Nickname and (Available) Presence
+$w->loginWithPassword($password);
+
 //Retrieve large profile picture. Output is in /src/php/pictures/ (you need to bind a function
 //to the event onProfilePicture so the script knows what to do.
 $w->eventManager()->bind("onGetProfilePicture", "onGetProfilePicture");
@@ -64,9 +67,6 @@ $w->sendGetProfilePicture($target, true);
 //Print when the user goes online/offline (you need to bind a function to the event onPressence
 //so the script knows what to do)
 $w->eventManager()->bind("onPresence", "onPresenceReceived");
-
-// Now loginWithPassword function sends Nickname and (Available) Presence
-$w->loginWithPassword($password);
 
 echo "[*] Connected to WhatsApp\n\n";
 
