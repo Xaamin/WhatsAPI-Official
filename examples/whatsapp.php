@@ -719,9 +719,9 @@ class Whatsapp
     /**
      * Show Web app Login page
      *
-     * @return void
+     * @return string
      */
-    public function showWebLoginForm($error = null)
+    public function showWebLoginForm()
     {
         ob_start();
         ?>
@@ -782,11 +782,6 @@ class Whatsapp
 								</div>
 								<div class="panel-body">
 									<form class="form-signin" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" role="form">
-										<?php
-										if (isset($error)) {
-											echo '<div class="danger">Sorry the password was invalid. Please try again.</div> <br>';
-										}
-										?>
 										<input type="hidden" name="action" value="login">
 										
 										<div class="row">
@@ -818,7 +813,7 @@ class Whatsapp
     /**
      * Show main Web App.
      *
-     * @return void
+     * @return string
      */
     private function showWebForm()
     {

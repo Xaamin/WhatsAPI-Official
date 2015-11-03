@@ -1,12 +1,23 @@
-# Chat API
+# Chat API [![Latest Stable Version](https://poser.pugx.org/whatsapp/chat-api/v/stable)](https://packagist.org/packages/whatsapp/chat-api) [![Total Downloads](https://poser.pugx.org/whatsapp/chat-api/downloads)](https://packagist.org/packages/whatsapp/chat-api) [![License](https://poser.pugx.org/whatsapp/chat-api/license)](https://packagist.org/packages/whatsapp/chat-api)
 
 Interface to WhatsApp Messenger
 
-**Read the [wiki](https://github.com/mgp25/Chat-API/wiki)** and previous issues before opening a new one! Maybe your issue is already answered.
+**Read the [wiki](https://github.com/WHAnonymous/Chat-API/wiki)** and previous issues before opening a new one! Maybe your issue is already answered.
 
-**[WhatsApp incoming updates log](https://github.com/mgp25/Chat-API/wiki/WhatsApp-incoming-updates)**
+For new WhatsApp updates check **[WhatsApp incoming updates log](https://github.com/WHAnonymous/Chat-API/wiki/WhatsApp-incoming-updates)**
+
+**Do you like this project? Support it by donating**
+- ![Paypal](https://raw.githubusercontent.com/reek/anti-adblock-killer/gh-pages/images/paypal.png) Paypal: [Donate](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YNVNPLE45DNG6)
+- ![btc](https://camo.githubusercontent.com/4bc31b03fc4026aa2f14e09c25c09b81e06d5e71/687474703a2f2f7777772e6d6f6e747265616c626974636f696e2e636f6d2f696d672f66617669636f6e2e69636f) Bitcoin: 1HcEX9foem5atreEg1gbQ6xVeosN5WEcjs 
 
 ----------
+### Installation
+
+```sh
+composer require whatsapp/chat-api
+```
+
+- Requires: [PHP Protobuf](https://github.com/allegro/php-protobuf) and [Curve25519](https://github.com/mgp25/curve25519-php) to enable end to end encryption [**Optional**]
 
 ### Special thanks
 
@@ -15,70 +26,11 @@ Interface to WhatsApp Messenger
 - [SikiFn](https://github.com/SikiFn)
 - [0xTryCatch](https://github.com/0xTryCatch)
 - [Shirioko](https://github.com/shirioko)
+- [sinjuice](https://github.com/sinjuice)
 
+Also Ahmed Moh'd ([fb.com/ahmed.mhd](fb.com/ahmed.mhd)) and Ali Hubail ([@hubail](https://twitter.com/hubail)) for making this project possible.
 
-### Update October 7th, 2014
-
-This is going to be the official repository of WhatsAPI. We don't support spam and we won't answer issues like "Blocking" or "sending massive messages".
-
-**Latest updates**
-- *Auto token updater: It uses a private server to generate token. When executing API it will check always for newest token, user agent and version.*
-- *Identity generation has changed: Now is random_pseudo_bytes, in the WhatsApp object, the value you set in identity is the name of the file where the identity is going to be saved. I recommend to set as identity your phone number.*
-
-
-
-
-### Update March 15th, 2014
-
-Sources are back after brief downtime due to [DCMA takedown](https://github.com/github/dmca/blob/master/2014-02-12-WhatsApp.md).
-
-### Note July 30th, 2013
-*New policy:*
-
-*I no longer provide support to users who are trying to send bulk messages using this API (i.e. a large amount of messages and not the built-in bulk message functionality).*
-*Sending advertisments on WhatsApp goes directly against their EULA and I have no way of determining whether the user is trying to send spam, advertising or sending mass messages to "opt-in users".*
-*And I also don't want to waste the little spare time that I have on trying to figure out ways to fuck up this beautiful ad-free platform called WhatsApp by enabling people to send spam.*
-*Everyone is free to use this API but there will be no more issue reports about being blocked after sending messages to semi-random users.*
-
-*In the famous words of Heath Ledger as the Joker (taken completely out of context by me):*
-
-**It's not about the money, it's about sending a message.**
-
-*\- [shirioko](https://github.com/shirioko)*
-
-----------
-
-### Note July 14th, 2013
-*Events renamed:*
-- *A large number of events have been renamed in the event handling system to better match the recent method names.*
-- *All event names and parameters have been listed in the EVENTS.md file*
-
-
-----------
-
-### Note July 10th, 2013
-*Another massive overhaul in the code:*
-- *MAJOR RENAMING OF MOST METHODS!! Old legacy code will break, we are sorry but it is necessary to provide a cleaner interface. Please check the new code.*
-- *Methods renamed to give a more consistent feel to the API - all methods are now camelCase watch out for typo's!*
-- *Initial movement towards bringing the code into alignment with PSR-2 (http://www.php-fig.org/psr/2/)*
-- *There is absolutely NO, NONE, NADA, ZIP, 100% FREE of any need to use/enter a MAC address or IMEI in this code. DO NOT TRY!*
-- *[New Android token used](https://github.com/karolsarnacki/whatsapp/commit/55d8233b852ecd9f6a6f845586e91e6fadbd0c44#L1L20) as WP7 one appears to no longer work. Long live the WP7 token?*
-
-----------
-
-
-### Note June 18th, 2013
-
-*Big overhaul in the code. Big thanks to:*
-- *[Ali Hubail](https://github.com/hubail) and*
-- *[Ahmed Moh'd](http://fb.com/ahmed.mhd) for making this project happen (and adding me as a member)*
-- *[Jannik Vogel](https://github.com/JayFoxRox) for helping me retrieve the latest WhatsApp token, someone should write a book about it some day..*
-- *[Tarek Galal](https://github.com/tgalal) for providing the latest WhatsApp functionality in yowsup*
-- *[Atans](https://github.com/atans) and*
-- *[Jonathan Williamson](https://github.com/jonnywilliamson) for additional fixes*
-
-*\- [shirioko](https://github.com/shirioko)*
-
+And everyone that contributes to it.
 
 ----------
 
@@ -87,72 +39,25 @@ According to [the company](http://www.whatsapp.com/):
 
 > “WhatsApp Messenger is a cross-platform mobile messenger that replaces SMS and works through the existing internet data plan of your device. WhatsApp is available for iPhone, BlackBerry, Android, Windows Phone, Nokia Symbian60 & S40 phones. Because WhatsApp Messenger uses the same internet data plan that you use for email and web browsing, there is no cost to message and stay in touch with your friends.”
 
-Late 2011 numbers: 1 billion messages per day, ~20 million users.
-
-### Modified XMPP
-WhatsApp uses some sort of customized XMPP server, named internally as FunXMPP, which is basically some extended proprietary version.
-
-### Login procedure
-Much like XMPP, WhatsApp uses JID (jabber id) and password to successfully login to the service. The password is generated by the server and received upon registration.
-
-
-The JID is a concatenation between your country’s code and mobile number.
-
-Initial login uses Digest Access Authentication.
-
-### Message sending
-Messages are basically sent as TCP packets, following WhatsApp’s own format (unlike what’s defined in XMPP RFCs).
-
-Messages are application level encrypted using RC4 keystreams
-
-### Multimedia Message sending
-Photos, Videos and Audio files shared with WhatsApp contacts are HTTP-uploaded to a server before being sent to the recipient(s) along with Base64 thumbnail of media file (if applicable) along with the generated HTTP link as the message body.
-
-### Event system
-WhatsApi uses an event manager (created by [facine](https://github.com/facine)) which allows you to respond to certain events.
-
-List of events and example code on how to bind an event handler:
-https://github.com/shirioko/WhatsAPI/wiki/WhatsApi-events
-
-# FAQ
-
-
-- **What’s with the hex chars floating all over the code?**
-
-	Mostly WhatsApp’s proprietary control chars/commands, or formatted data according to their server’s specifications, stored in predefined dictionaries within the clients.
-
-- **What’s your future development plans?**
-
-	We don’t have any.
-
-- **Would it run over the web?**
-
-	We’ve tested a slightly-modified version on top of Tornado Web Server and worked like a charm, however, building a chat client is a bit tricky, do your research.
-
-- **Can I receive chats?**
-
-	Indeed, using the same socket-receiving mechanism. But you have to parse the incoming data. Parsing functions aren’t included in this release, maybe in the next one?
-
-- **I think the code is messy.**
-
-	It’s working.
-
-- **How can I obtain my password?**
-
-	Register a number using WhatsAPI or intercept your phone's password using MissVenom
-
-# NOTES
-
-- This proof of concept is extensible to contain every feature that make a fully-fledged client, similar to the official ones, actually could be even better.
-
-- During the two weeks of analysis of service mechanisms, we stumbled upon serious design and security flaws (they fixed some of them since 2011). For a company with such massive user base, we expected better practises and engineering.
+Jan. 2015: 30 billion messages per day, ~700 million users.
 
 # License
 
-MIT - refer to the source code for the extra line.
+As of November 1, 2015 Chat API is licensed under the GPLv3+: http://www.gnu.org/licenses/gpl-3.0.html.
 
-# Venomous
+# Terms and conditions
 
-Team of Bahraini Developers.
+- You will NOT use this API for marketing purposes (spam, massive sending...).
+- We do NOT give support to anyone that wants this API to send massive messages or similar.
+- We reserve the right to block any user of this repository that does not meet these conditions.
 
-Ahmed Moh'd ([fb.com/ahmed.mhd](https://www.facebook.com/ahmed.mhd)) and Ali Hubail ([@hubail](https://twitter.com/hubail)) contributed to this release.
+## Legal
+
+This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial API. Use at your own risk.
+
+
+##Cryptography Notice
+
+This distribution includes cryptographic software. The country in which you currently reside may have restrictions on the import, possession, use, and/or re-export to another country, of encryption software. BEFORE using any encryption software, please check your country's laws, regulations and policies concerning the import, possession, or use, and re-export of encryption software, to see if this is permitted. See http://www.wassenaar.org/ for more information.
+
+The U.S. Government Department of Commerce, Bureau of Industry and Security (BIS), has classified this software as Export Commodity Control Number (ECCN) 5D002.C.1, which includes information security software using or performing cryptographic functions with asymmetric algorithms. The form and manner of this distribution makes it eligible for export under the License Exception ENC Technology Software Unrestricted (TSU) exception (see the BIS Export Administration Regulations, Section 740.13) for both object code and source code.
